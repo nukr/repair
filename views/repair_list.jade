@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  a(href="/") 回首頁
+  h1= title
+  table
+    tr
+      th 姓名
+      th 電話
+      th 報修原因
+      th 日期
+    each repair in repairs
+      tr
+        td= repair.customer
+        td= repair.cellphone
+        td= repair.reason
+        td= repair.date
