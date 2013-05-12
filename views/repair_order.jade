@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  .first
+    .repairOrder
+      table
+        tr
+          td
+            label 客戶名稱
+          td= repairs[1].customer
+          td= repairs[1].cellphone
+          td= repairs[1].formatDate
+        tr
+          td(colspan="3")= repairs[1].reason
+  .second
+    .repairOrder
+      table
+        tr
+          td
+            label 客戶名稱
+          td= repairs[1].customer
+          td= repairs[1].cellphone
+          td= repairs[1].formatDate
+        tr
+          td(colspan="3")= repairs[1].reason
+  .third
+    .repairOrder
+      table
+        tr
+          td
+            label 客戶名稱
+          td= repairs[1].customer
+          td= repairs[1].cellphone
+          td= repairs[1].formatDate
+        tr
+          td(colspan="3")= repairs[1].reason

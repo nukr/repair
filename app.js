@@ -33,6 +33,7 @@ app.get('/users', user.list);
 app.get('/repair/create', repair.form);
 app.post('/repair/create', repair.create);
 app.get('/repair/list', repair.list);
+app.get('/repair/order', repair.order)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,5 +1,6 @@
 var models = require('../models')
 var Repair = models.Repair;
+var moment = require('moment')
 
 exports.form = function (req, res) {
   res.render('form', {title: '維修表單'});
@@ -26,3 +27,13 @@ exports.list = function (req, res) {
     res.render('repair_list', {title: "維修列表", "repairs": repairs})
   });
 }
+
+exports.order = function (req, res) {
+  var date = [];
+  Repair.find({}, function(err, repairs){
+    for (var i = 0; i < repairs.length; i += 1) {
+      repairs[i].formatDate = moment(repairs[i].date).format('YYYY-MM-DD')
+    }
+    res.render('repair_order', {title: "維修工單", "repairs": repairs})
+  });
+};
