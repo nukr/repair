@@ -9,9 +9,12 @@ block content
       th 電話
       th 報修原因
       th 日期
+      th 列印
     each repair in repairs
       tr
         td= repair.customer
         td= repair.cellphone
         td= repair.reason
         td= repair.date
+        td
+          a(href="/repair/order/#{repair._id}") 列印

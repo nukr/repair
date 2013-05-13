@@ -1,36 +1,65 @@
 extends layout
 
 block content
+  .header
+    a.hidden-in-print(href="/") 回首頁
   .first
     .repairOrder
       table
         tr
           td
             label 客戶名稱
-          td= repairs[1].customer
-          td= repairs[1].cellphone
-          td= repairs[1].formatDate
+          td= repair.customer
+          td
+            label 電話
+          td= repair.cellphone
+          td
+            label 報修時間
+          td= repair.formatDate
         tr
-          td(colspan="3")= repairs[1].reason
+          td
+            label 聯絡人
+          td
+          td
+            label 地址
+          td
+        tr
+          td
+            label 報修原因
+          td(colspan="5")= repair.reason
+      p
+        第一聯：會計聯
   .second
     .repairOrder
       table
         tr
           td
             label 客戶名稱
-          td= repairs[1].customer
-          td= repairs[1].cellphone
-          td= repairs[1].formatDate
+          td= repair.customer
+          td
+            label 電話
+          td= repair.cellphone
+          td
+            label 報修時間
+          td= repair.formatDate
         tr
-          td(colspan="3")= repairs[1].reason
+          td
+            label 報修原因
+          td(colspan="5")= repair.reason
   .third
     .repairOrder
       table
         tr
           td
             label 客戶名稱
-          td= repairs[1].customer
-          td= repairs[1].cellphone
-          td= repairs[1].formatDate
+          td= repair.customer
+          td
+            label 電話
+          td= repair.cellphone
+          td
+            label 報修時間
+          td= repair.formatDate
         tr
-          td(colspan="3")= repairs[1].reason
+          td
+            label 報修原因
+          td(colspan="5")= repair.reason

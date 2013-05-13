@@ -30,10 +30,8 @@ exports.list = function (req, res) {
 
 exports.order = function (req, res) {
   var date = [];
-  Repair.find({}, function(err, repairs){
-    for (var i = 0; i < repairs.length; i += 1) {
-      repairs[i].formatDate = moment(repairs[i].date).format('YYYY-MM-DD')
-    }
-    res.render('repair_order', {title: "維修工單", "repairs": repairs})
+  Repair.findOne({_id: req.params.id}, function(err, repair){
+    repair.formatDate = moment(repair.date).format('YYYY-MM-DD')
+    res.render('repair_order', {title: "維修工單", "repair": repair})
   });
 };

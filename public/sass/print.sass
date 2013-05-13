@@ -6,7 +6,15 @@
 @import "compass/reset"
 
 html
+  .hidden-in-print
+    display: none
   body
+    table, tr, td
+      border: 1px solid black
+    table
+      width: 100%
+    td
+      padding: 5px
     .first
       height: 9.23cm
       border-bottom: 1px dotted black
